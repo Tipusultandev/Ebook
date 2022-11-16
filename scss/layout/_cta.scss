@@ -1,0 +1,102 @@
+@use "../util/" as u;
+.ebk-cta {
+  background-image: url(../images/call-to-action.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #212132;
+  background-size: cover;
+  padding: 120px 0;
+
+  &__content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &__heading-text {
+    font-weight: 700;
+    color: var(--text-color-hero-heading);
+  }
+
+  &__description-text {
+    font-size: 18px;
+    font-family: u.$font-lato;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.66;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 15px 40px 0;
+
+    @include u.breakpoint-down(medium) {
+      padding: 10px 15px 0;
+    }
+
+    @include u.breakpoint-down(small) {
+      padding: 10px 0 0;
+    }
+  }
+
+  &__highlight {
+    position: relative;
+    display: inline-block;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -9px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(/images/border-fill.png);
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: 100%;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    max-width: 510px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 45px auto 0;
+
+    @include u.breakpoint-down(small) {
+      grid-template-columns: 1fr;
+      margin: 25px auto 0;
+    }
+  }
+
+  &__button {
+    font-family: u.$font-inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    text-align: center;
+    text-transform: capitalize;
+    color: #212132;
+    background: #eaca29;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    padding: 13px 20px;
+
+    @include u.breakpoint-down(medium) {
+      font-size: 16px;
+      padding: 13px 15px;
+    }
+
+    @include u.breakpoint-down(small) {
+      border-radius: 5px;
+    }
+  }
+
+  @include u.breakpoint(medium) {
+    padding: 80px 0;
+  }
+
+  @include u.breakpoint-down(small) {
+    padding: 60px 0;
+  }
+}

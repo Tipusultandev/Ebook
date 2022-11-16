@@ -1,0 +1,93 @@
+@use "../util/" as u;
+.ebk-hero {
+  background-image: url(../images/hero.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--background-color);
+  padding: 10px 0px 145px;
+
+  @include u.breakpoint(large) {
+    padding: 10px 0px 100px;
+  }
+
+  @include u.breakpoint(medium) {
+    padding: 10px 0px 80px;
+  }
+
+  @include u.breakpoint-down(small) {
+    padding: 10px 0px 60px;
+  }
+
+  &__content-area {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: auto;
+    gap: 60px;
+    align-items: center;
+
+    @include u.breakpoint(medium) {
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+    }
+
+    @include u.breakpoint-down(small) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  &__heading {
+    letter-spacing: -0.02em;
+    margin-top: 160px;
+    line-height: 1.2;
+  }
+
+  &__highlight {
+    position: relative;
+    display: inline-block;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -9px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(/images/fill3.png);
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: 100%;
+    }
+  }
+  &__form {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    max-width: 510px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 45px auto 0 0;
+    @include u.breakpoint-down(small) {
+      grid-template-columns: 1fr;
+      margin: 20px auto 0 0;
+    }
+  }
+  &__description {
+    font-size: 18px;
+    font-family: u.$font-lato;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 50px;
+  }
+
+  &__link {
+    color: #0593fc;
+    text-decoration: underline;
+  }
+}
+
+.ebk-cta__form {
+  &__form--modifier {
+    margin: 40px auto 0 0;
+  }
+}

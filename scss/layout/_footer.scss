@@ -1,0 +1,13 @@
+@use "../util/" as u;
+
+.ebk-footer {
+  background-color: var(--button-active-color);
+  padding: 15px 10px;
+
+  &__description {
+    font-family: u.$font-lato;
+    font-size: 20px;
+    text-align: center;
+    color: var(--text-color-hero-heading);
+  }
+}

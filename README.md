@@ -1,2 +1,2 @@
-# Ebook
-ebook html template
+# Webinar
+Webinar  Project

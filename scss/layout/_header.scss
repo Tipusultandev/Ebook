@@ -1,0 +1,118 @@
+.ebk-header {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+span.icon {
+  background-color: rgb(0, 0, 0);
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  right: 0px;
+  top: 20px;
+  padding: 0.1em;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 0.5em;
+    transition: transform 0.6s;
+
+    path {
+      stroke: white;
+      fill: none;
+    }
+  }
+}
+
+nav {
+  // padding-bottom: 5em;
+  // position: relative;
+
+  span.inner {
+    transform: translateY(0);
+    transition: transform 0.6s;
+  }
+  &:hover span.inner {
+    transform: translateY(-100%);
+  }
+  &:hover span.icon {
+    background-color: gray;
+  }
+  &:hover span.icon svg {
+    transform: rotateZ(180deg);
+  }
+  &:hover section.dropdown {
+    transform: translateY(0);
+  }
+  &:hover ul li {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  & > a {
+    display: inline-flex;
+    height: 1em;
+    overflow: hidden;
+    flex-direction: column;
+    font-size: 5rem;
+    justify-items: center;
+    line-height: 1em;
+    position: relative;
+    padding-right: 1em;
+  }
+}
+
+section.dropdown {
+  position: absolute;
+  z-index: -1;
+  background-color: #212132c7;
+  top: 0;
+  height: 60vh;
+  width: 80%;
+  display: flex;
+  align-items: flex-end;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
+}
+
+ul {
+  list-style-type: none;
+  margin-bottom: 5em;
+  margin-left: 3em;
+
+  li {
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+    transition-delay: 0.3s;
+    transform: translateY(40px);
+
+    &:nth-of-type(1) {
+      transition-delay: 0.2s;
+    }
+    
+    &:nth-of-type(2) {
+      transition-delay: 0.3s;
+    }
+    &:nth-of-type(3) {
+      transition-delay: 0.4s;
+    }
+    &:nth-of-type(4) {
+      transition-delay: 0.5s;
+    }
+    a {
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: underline;
+    }
+  }
+}
