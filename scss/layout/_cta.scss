@@ -65,6 +65,7 @@
     @include u.breakpoint-down(small) {
       grid-template-columns: 1fr;
       margin: 25px auto 0;
+      gap: 15px;
     }
   }
 
@@ -83,8 +84,8 @@
     padding: 13px 20px;
 
     @include u.breakpoint-down(medium) {
-      font-size: 16px;
-      padding: 13px 15px;
+      font-size: 14px;
+      padding: 15px 15px;
     }
 
     @include u.breakpoint-down(small) {
